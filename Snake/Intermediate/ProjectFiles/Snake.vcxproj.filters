@@ -11,6 +11,7 @@
     <None Include="..\..\Source\SnakeEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -37,6 +38,18 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\Snake\Snake.h">
       <Filter>Source\Snake</Filter>
+    </ClInclude>
+    <Filter Include="Source\Snake\Private">
+      <UniqueIdentifier>{49B49429-C46F-3B34-AF2C-B29282F9A925}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Snake\Private\WallSpawner.cpp">
+      <Filter>Source\Snake\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\Snake\Public">
+      <UniqueIdentifier>{E710C790-D105-374F-BB44-79358A59A612}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\Snake\Public\WallSpawner.h">
+      <Filter>Source\Snake\Public</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\horizoners.to-d00\\desktop\\snakeinunreal\\snake\\source\\snake\\private\\wallspawner.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\horizoners.to-d00\\desktop\\snakeinunreal\\snake\\intermediate\\build\\win64\\x64\\snakeeditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "c:\\users\\horizoners.to-d00\\desktop\\snakeinunreal\\snake\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\snake\\definitions.snake.h",
+            "c:\\users\\horizoners.to-d00\\desktop\\snakeinunreal\\snake\\source\\snake\\public\\wallspawner.h",
+            "c:\\users\\horizoners.to-d00\\desktop\\snakeinunreal\\snake\\intermediate\\build\\win64\\unrealeditor\\inc\\snake\\uht\\wallspawner.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
