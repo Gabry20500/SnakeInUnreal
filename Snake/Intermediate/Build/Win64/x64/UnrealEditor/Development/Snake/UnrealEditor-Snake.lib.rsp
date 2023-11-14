@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-Snake.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\Horizoners.TO-D00\Desktop\SnakeInUnreal\Snake\Intermediate\Build\Win64\x64\SnakeEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
+"C:\Users\Horizoners.TO-D00\Desktop\SnakeInUnreal\Snake\Intermediate\Build\Win64\x64\UnrealEditor\Development\Snake\Snake.cpp.obj"
+"C:\Users\Horizoners.TO-D00\Desktop\SnakeInUnreal\Snake\Intermediate\Build\Win64\x64\UnrealEditor\Development\Snake\Default.rc2.res"
+/OUT:"C:\Users\Horizoners.TO-D00\Desktop\SnakeInUnreal\Snake\Intermediate\Build\Win64\x64\UnrealEditor\Development\Snake\UnrealEditor-Snake.lib"
