@@ -4,23 +4,22 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "WallSpawner.generated.h"
+#include "SnakeSegment.generated.h"
 
 UCLASS()
-class SNAKE_API AWallSpawner : public AActor
+class SNAKE_API ASnakeSegment : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	AWallSpawner();
+	ASnakeSegment();
 
-protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	void MoveSegment(const FVector& NewLocation, const FRotator& NewRotation);
+
+private:
+	UPROPERTY(EditDefaultsOnly, Category = "Snake")
+	UStaticMeshComponent* SegmentMesh;
 };
