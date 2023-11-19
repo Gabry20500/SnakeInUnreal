@@ -33,5 +33,6 @@ protected:
 	TSubclassOf<AActor> WallMesh;
 
 	void CreateGameGrid();
+	void SpawnCameraAtLocation(UWorld* World, FVector SpawnLocation);
 	void SpawnWallAtLocation(UWorld* World, FVector SpawnLocation, FRotator SpawnRotation);
 };
