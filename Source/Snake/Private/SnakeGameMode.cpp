@@ -3,6 +3,7 @@
 
 #include "SnakeGameMode.h"
 
+#include "Fruit.h"
 #include "SnakePawn.h"
 #include "SnakePlayerController.h"
 #include "Engine/StaticMesh.h"
@@ -53,6 +54,7 @@ void ASnakeGameMode::CreateGameGrid()
 	FVector CenterLocation = FVector((GridWidth - 1) * WallSize * 0.5f, (GridHeight - 1) * WallSize * 0.5f, CameraDistance);
 	
 	SpawnCameraAtLocation(World, CenterLocation);
+	SpawnFruit();
 }
 
 void ASnakeGameMode::SpawnCameraAtLocation(UWorld* World, FVector SpawnLocation)
@@ -87,5 +89,22 @@ void ASnakeGameMode::SpawnWallAtLocation(UWorld* World, FVector SpawnLocation, F
 	{
 		FActorSpawnParameters SpawnParams;
 		AStaticMeshActor* NewWall = World->SpawnActor<AStaticMeshActor>(WallMesh, SpawnLocation, SpawnRotation, SpawnParams);
+	}
+}
+
+void ASnakeGameMode::SpawnFruit()
+{
+	UWorld* World = GetWorld();
+	if (World)
+	{
+		FActorSpawnParameters SpawnParams;
+		AFruit* NewFruit = World->SpawnActor<AFruit>(AFruit::StaticClass(), FVector::ZeroVector, FRotator::ZeroRotator, SpawnParams);
+		if (NewFruit)
+		{
+			NewFruit->SpawnFruit();
+
+			float ScaleFactor = 4.0f; // Fattore di scala per aumentare le dimensioni del frutto
+			NewFruit->FruitMesh->SetWorldScale3D(FVector(ScaleFactor, ScaleFactor, ScaleFactor));
+		}
 	}
 }

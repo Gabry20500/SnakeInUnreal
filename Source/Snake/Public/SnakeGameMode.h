@@ -18,8 +18,7 @@ public:
 	ASnakeGameMode();
 
 	virtual void BeginPlay() override;
-
-protected:
+	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SnakeGame")
 	int32 GridWidth = 30;
 
@@ -28,6 +27,7 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "SnakeGame")
 	float WallSize= 100.0f;
+protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "SnakeGame")
 	TSubclassOf<AActor> WallMesh;
@@ -35,4 +35,5 @@ protected:
 	void CreateGameGrid();
 	void SpawnCameraAtLocation(UWorld* World, FVector SpawnLocation);
 	void SpawnWallAtLocation(UWorld* World, FVector SpawnLocation, FRotator SpawnRotation);
+	void SpawnFruit();
 };

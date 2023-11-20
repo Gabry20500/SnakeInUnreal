@@ -13,17 +13,45 @@ ASnakePawn::ASnakePawn()
 	SegmentLength = 100.0f;
 	MoveDirection = FVector::ForwardVector;
 
-	static ConstructorHelpers::FClassFinder<ASnakeSegment> SegmentClassFInder(TEXT("/Game/Snake/BP_SnakeSegment.BP_SnakeSegment"));
-	if (SegmentClassFInder.Succeeded())
+	static ConstructorHelpers::FClassFinder<ASnakeSegment> SegmentClassFinder(TEXT("/Game/Snake/Bp_SnakeSegment.Bp_SnakeSegment"));
+	if (SegmentClassFinder.Succeeded())
 	{
-		SegmentClass = SegmentClassFInder.Class;
+		SegmentClass = SegmentClassFinder.Class;
+		if (SegmentClass)
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Classe SnakeSegment caricata correttamente"));
+		}
+		else
+		{
+			UE_LOG(LogTemp, Error, TEXT("Classe SnakeSegment non trovata"));
+		}
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("Classe BP_SnakeSegment non trovata"));
 	}
 
+	if (SegmentClass)
+	{
+		FVector NewLocation = GetActorLocation() - MoveDirection * SegmentLength;
+		FRotator NewRotation = GetActorRotation();
+
+		ASnakeSegment* NewSegment = GetWorld()->SpawnActor<ASnakeSegment>(SegmentClass, NewLocation, NewRotation);
+		if (NewSegment)
+		{
+			SnakeSegments.Add(NewSegment);
+		}
+	}
 }
 
 void ASnakePawn::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+}
+
+void ASnakePawn::BeginPlay()
+{
+	Super::BeginPlay();
 }
 
 void ASnakePawn::AddSegment()
@@ -38,6 +66,10 @@ void ASnakePawn::AddSegment()
 		{
 			SnakeSegments.Add(NewSegment);
 		}
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("Impossibile creare segmento"));
 	}
 }
 

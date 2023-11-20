@@ -15,7 +15,7 @@ ASnakeSegment::ASnakeSegment()
 void ASnakeSegment::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	UE_LOG(LogTemp, Warning, TEXT("a cosi"));
 }
 
 void ASnakeSegment::MoveSegment(const FVector& NewLocation, const FRotator& NewRotation)

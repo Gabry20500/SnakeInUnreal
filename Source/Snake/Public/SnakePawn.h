@@ -16,9 +16,10 @@ public:
 	ASnakePawn();
 	
 	virtual void Tick(float DeltaTime) override;
-
+	virtual void BeginPlay() override;
 	void AddSegment();
-	
+
+	float GetSegmentLength() const { return SegmentLength; }
 protected:
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 	
