@@ -24,6 +24,11 @@ void ASnakePlayerController::Tick(float DeltaSeconds)
 
 	if (GetPawn())
 	{
+		if (auto Snake = Cast<ASnakePawn>(GetPawn()))
+		{
+			Snake->UpdateSegmentsPositions();
+		}
+
 		// Movimento automatico in avanti
 		FVector NewLocation = GetPawn()->GetActorLocation() + (CurrentDirection * DeltaSeconds * MovementSpeed);
 		GetPawn()->SetActorLocation(NewLocation);

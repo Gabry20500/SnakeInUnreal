@@ -23,13 +23,18 @@ public:
 protected:
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 	
+	void UpdateSegmentsPositions();
 private:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Snake")
 	TSubclassOf<class ASnakeSegment> SegmentClass;
 
+	
 	TArray<ASnakeSegment*> SnakeSegments;
 	int32 SnakeLength;
 	float SegmentLength;
 	FVector MoveDirection;
+	bool skipMovement = false;
+
+	friend class ASnakePlayerController;
 };

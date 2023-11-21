@@ -68,7 +68,6 @@ void AFruit::Consume()
 		SnakePawnInstance->AddSegment();
 
 		SpawnFruit();
-		Destroy();
 	}
 }
 
@@ -92,7 +91,7 @@ void AFruit::CeckCollision()
 		float Distance = FVector::Distance(GetActorLocation(), SnakePawnInstance->GetActorLocation());
 
 		// Controlla se la testa del serpente è abbastanza vicina da consumare il frutto
-		if (Distance < SnakePawnInstance->GetSegmentLength() * 0.5f)
+		if (Distance <  200.0f)
 		{
 			Consume();
 		}
